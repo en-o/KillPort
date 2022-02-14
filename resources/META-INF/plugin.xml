@@ -5,15 +5,15 @@
   <vendor email="1445763190@qq.com" url="http://www.tannn.cn">tan</vendor>
 
   <description><![CDATA[
-      搜索端口下的进程，进行kill掉它(Search for ports and kill)··························
+      Search for ports and kill··························
     ]]></description>
 
   <change-notes><![CDATA[
-      第一版，目前只支持windows.(The first version only supports Windows  )<br>
+     The first version only supports Windows ( ps: 第一版，目前只支持windows.)<br>
       <em>used:<br>
-        1. 输入端口<br>
-        2. 搜索<br>
-        3. 右击结果<br>
+        1. input port(输入端口<br>
+        2. search(搜索<br>
+        3. right click(右击结果<br>
         4. kill <br>
       <img src="https://s3.bmp.ovh/imgs/2022/02/26ffe5b196b05994.png" alt="说明文档" />
       <img src="https://s3.bmp.ovh/imgs/2022/02/1e18633a20c8c6e5.png"  alt="说明文档" /> </em>
