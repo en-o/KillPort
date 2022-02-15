@@ -5,18 +5,42 @@
   <vendor email="1445763190@qq.com" url="http://www.tannn.cn">tan</vendor>
 
   <description><![CDATA[
-      Search for ports and kill··························
+       <article>
+      <h1> English:</h1> <br/>
+      <p>This is a tool for terminating application processes by port. </p>
+      <p>When developing a Web application, a port is occupied, and when the port is not important or we don't know who is occupying it, we want to check it out and end it. </p>
+      <p>But the system often doesn't remember the commands and you always have to go through the documentation, so that's where this tool comes in. </p>
+      <p>The way to use the tool is simple: </p>
+      <ol>
+        <li>Open the plug-in</li>
+        <li>Input port</li>
+        <li>Click Search</li>
+        <li>Right-click the search results</li>
+        <li>End the selection process</li>
+	  </ol>
+
+      <h1> Chinese:</h1>
+      <p>这是一款根据端口结束应用进程的工具。 </p>
+      <p>在开发web应用时,会出现端口被占用的情况，当这个端口不重要或者不知道是谁在占用时，我们就想查看他并结束他。 </p>
+      <p>但是系统的命令经常记不住总是得去翻文档，于是就有了这个工具。 </p>
+      <p>工具的使用方式很简单: </p>
+        <ol>
+          <li>打开插件</li>
+          <li>输入端口</li>
+          <li>点击搜索</li>
+          <li>右击搜索的结果</li>
+          <li>结束选择的进程</li>
+        </ol>
+     <article>
+     <h1>tool screenshot</h1>
+     <img src="https://s3.bmp.ovh/imgs/2022/02/4655f5eef2394ba1.png"  alt="used" />
+     <img src="https://s3.bmp.ovh/imgs/2022/02/66d4a337c07a1211.png"  alt="tool screenshot" />
+     <img src="https://s3.bmp.ovh/imgs/2022/02/1bccc601141c9b7d.png"  alt="tool screenshot" />
     ]]></description>
 
   <change-notes><![CDATA[
-     The first version only supports Windows ( ps: 第一版，目前只支持windows.)<br>
-      <em>used:<br>
-        1. input port(输入端口<br>
-        2. search(搜索<br>
-        3. right click(右击结果<br>
-        4. kill <br>
-      <img src="https://s3.bmp.ovh/imgs/2022/02/26ffe5b196b05994.png" alt="说明文档" />
-      <img src="https://s3.bmp.ovh/imgs/2022/02/1e18633a20c8c6e5.png"  alt="说明文档" /> </em>
+      The first version only supports Windows.（目前支支持window） <br/>
+      macos in the works.（苹果系统规划中）  <br/>
     ]]>
   </change-notes>
 
