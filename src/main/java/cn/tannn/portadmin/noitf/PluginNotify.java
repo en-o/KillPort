@@ -2,7 +2,9 @@ package cn.tannn.portadmin.noitf;
 
 import com.intellij.notification.Notification;
 import com.intellij.notification.NotificationGroup;
+import com.intellij.notification.NotificationGroupManager;
 import com.intellij.notification.Notifications;
+import com.intellij.openapi.extensions.PluginId;
 
 /**
  * 消息通知
@@ -18,7 +20,9 @@ public class PluginNotify {
          * 2. 弹出的消息样式： BALLOON 气泡
          * 3. 事件记录 (右下角中的event log 中是否记录)
          */
-        NotificationGroup notificationGroup = new NotificationGroup(notify.getPluginId(), notify.getNotificationDisplayType(), notify.isLogBuDefault());
+        NotificationGroup notificationGroup = new NotificationGroup(notify.getPluginId(),
+                notify.getNotificationDisplayType(),
+                notify.isLogBuDefault());
         /*  消息 + 消息的类型 */
         Notification notification = notificationGroup.createNotification(notify.getMessages(), notify.getMessageType());
         /* 显示 */

@@ -1,12 +1,14 @@
 package cn.tannn.portadmin.util;
 
 import com.intellij.openapi.ui.MessageDialogBuilder;
+import com.intellij.openapi.ui.messages.MessageDialog;
 
+import java.security.MessageDigest;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static java.util.regex.Pattern.*;
+import static java.util.regex.Pattern.compile;
 
 /**
  * @author tn

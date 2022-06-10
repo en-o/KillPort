@@ -1,10 +1,13 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-  <id>cn.tannn.killport.id</id>
-  <name>KillPort</name>
-  <version>1.0</version>
-  <vendor email="1445763190@qq.com" url="http://www.tannn.cn">tan</vendor>
+    <id>cn.tannn.killport.id</id>
+    <name>KillPort</name>
+    <vendor email="1445763190@qq.com" url="http://www.tannn.cn">tan</vendor>
 
-  <description><![CDATA[
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
        <article>
       <h1> English:</h1> <br/>
       <p>This is a tool for terminating application processes by port. </p>
@@ -38,26 +41,23 @@
      <img src="https://s3.bmp.ovh/imgs/2022/02/1bccc601141c9b7d.png"  alt="tool screenshot" />
     ]]></description>
 
-  <change-notes><![CDATA[
+    <change-notes><![CDATA[
       The first version only supports Windows.（目前支支持window） <br/>
       macos in the works.（苹果系统规划中）  <br/>
     ]]>
-  </change-notes>
+    </change-notes>
 
-  <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
-  <idea-version since-build="173.0"/>
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
 
-  <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
-       on how to target different products -->
-  <depends>com.intellij.modules.platform</depends>
 
-  <extensions defaultExtensionNs="com.intellij">
-    <!--https://plugins.jetbrains.com/docs/intellij/tool-windows.html#declarative-setup-->
-    <toolWindow id="killPort" factoryClass="cn.tannn.portadmin.win.PortAdminWinFactory" anchor="bottom" icon="/img/logo.svg"></toolWindow>
-  </extensions>
-
-  <actions>
-    <!-- Add your actions here -->
-  </actions>
-
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!--https://plugins.jetbrains.com/docs/intellij/tool-windows.html#declarative-setup-->
+        <toolWindow id="killPort" factoryClass="cn.tannn.portadmin.win.PortAdminWinFactory" anchor="bottom"
+                    icon="/icons/pluginIcon.svg"></toolWindow>
+<!--        <notificationGroup displayType="BALLOON" id="killPort" key="notification.group.name"></notificationGroup>-->
+    </extensions>
 </idea-plugin>

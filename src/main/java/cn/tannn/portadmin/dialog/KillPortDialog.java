@@ -64,7 +64,9 @@ public class KillPortDialog extends DialogWrapper {
             // 获取编辑编辑框的内容
             String pidText = tfPID.getText();
             String killMessage = CmdUtil.killPid(pidText);
-            PluginNotify.notification(NotifyEntity.success("winkillport_id","kill "+pidText +"====>"+killMessage));
+            PluginNotify.notification(
+                     NotifyEntity.success("winkillport_id",
+                             "kill "+pidText +"====>"+killMessage));
             // 关闭消息框
             KillPortDialog.this.dispose();
         });
