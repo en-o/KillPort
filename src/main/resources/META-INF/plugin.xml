@@ -9,6 +9,7 @@
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
+      <article>
       <h1> English:</h1> <br/>
       <p>This is a tool for terminating application processes by port. </p>
       <p>When developing a Web application, a port is occupied, and when the port is not important or we don't know who is occupying it, we want to check it out and end it. </p>
