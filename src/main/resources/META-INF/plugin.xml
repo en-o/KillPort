@@ -36,9 +36,11 @@
         </ol>
      <article>
      <h1>tool screenshot</h1>
-     <img src="https://s3.bmp.ovh/imgs/2022/02/4655f5eef2394ba1.png"  alt="used" />
-     <img src="https://s3.bmp.ovh/imgs/2022/02/66d4a337c07a1211.png"  alt="tool screenshot" />
-     <img src="https://s3.bmp.ovh/imgs/2022/02/1bccc601141c9b7d.png"  alt="tool screenshot" />
+     <img src="https://oss.tannn.cn/idea/kill_2.png"  alt="used" />
+     <img src="https://oss.tannn.cn/idea/kill_3.png"  alt="kill" />
+     <img src="https://oss.tannn.cn/idea/kill_leng_err.png"  alt="tool kill_leng_err" />
+     <img src="https://oss.tannn.cn/idea/kill_num_err.png"  alt="tool kill_num_err" />
+     <img src="https://oss.tannn.cn/idea/kill_alert.png"  alt="tool kill_alert" />
     ]]></description>
 
     <change-notes><![CDATA[
