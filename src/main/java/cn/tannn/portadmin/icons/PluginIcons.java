@@ -1,15 +1,14 @@
 package cn.tannn.portadmin.icons;
 
 import com.intellij.openapi.util.IconLoader;
-import com.intellij.ui.IconManager;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
-public class PluginIcons {
+/**
+ * @author tnnn
+ */
+public interface PluginIcons {
 
-  Icon LOG_DEF = IconLoader.getIcon("/icons/pluginIcon.svg", PluginIcons.class);
-
-
+  Icon LOG_DEF = IconLoader.getIcon("/icons/log.png", PluginIcons.class);
 
 }

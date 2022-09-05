@@ -3,12 +3,12 @@
     <id>cn.tannn.killport.id</id>
     <name>KillPort</name>
     <vendor email="1445763190@qq.com" url="http://www.tannn.cn">tan</vendor>
-
+    <version>1.0.1</version>
+    <depends>com.intellij.modules.platform</depends>
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-       <article>
       <h1> English:</h1> <br/>
       <p>This is a tool for terminating application processes by port. </p>
       <p>When developing a Web application, a port is occupied, and when the port is not important or we don't know who is occupying it, we want to check it out and end it. </p>
@@ -47,17 +47,17 @@
     ]]>
     </change-notes>
 
-    <!-- Product and plugin compatibility requirements.
-         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
-    <depends>com.intellij.modules.platform</depends>
 
 
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
         <!--https://plugins.jetbrains.com/docs/intellij/tool-windows.html#declarative-setup-->
-        <toolWindow id="killPort" factoryClass="cn.tannn.portadmin.win.PortAdminWinFactory" anchor="bottom"
-                    icon="/icons/pluginIcon.svg"></toolWindow>
-<!--        <notificationGroup displayType="BALLOON" id="killPort" key="notification.group.name"></notificationGroup>-->
+        <toolWindow id="killPort"
+                    secondary="true"
+                    icon="cn.tannn.portadmin.icons.PluginIcons.LOG_DEF"
+                    factoryClass="cn.tannn.portadmin.win.PortAdminWinFactory"
+                    anchor="bottom">
+        </toolWindow>
     </extensions>
 </idea-plugin>
