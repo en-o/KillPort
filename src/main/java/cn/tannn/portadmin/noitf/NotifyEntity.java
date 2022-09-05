@@ -1,31 +1,41 @@
 package cn.tannn.portadmin.noitf;
 
 import com.intellij.notification.NotificationDisplayType;
+import com.intellij.notification.NotificationType;
 import com.intellij.openapi.ui.MessageType;
 
 /**
  * 消息通知
- *
+ * (BALLOON)
  * @author tn
  * @date 2022-01-12 14:23
  */
 
 public class NotifyEntity {
 
+    /**
+     * id
+     */
     private String pluginId;
+
+    /**
+     * 消息
+     */
     private String messages;
-    private boolean logBuDefault;
-    private NotificationDisplayType notificationDisplayType;
-    private MessageType messageType;
+
+
+    /**
+     * <a href="https://jetbrains.design/intellij/controls/notifications/">通知类型</a>
+     *
+     */
+    private NotificationType notificationType;
 
 
     public static NotifyEntity success(String pluginId, String messages) {
         NotifyEntity notif = new NotifyEntity();
         notif.setPluginId(pluginId);
         notif.setMessages(messages);
-        notif.setLogBuDefault(true);
-        notif.setNotificationDisplayType(NotificationDisplayType.BALLOON);
-        notif.setMessageType(MessageType.INFO);
+        notif.setNotificationType(NotificationType.INFORMATION);
         return  notif;
     }
 
@@ -46,28 +56,11 @@ public class NotifyEntity {
         this.messages = messages;
     }
 
-
-    public void setLogBuDefault(boolean logBuDefault) {
-        this.logBuDefault = logBuDefault;
+    public NotificationType getNotificationType() {
+        return notificationType;
     }
 
-    public boolean isLogBuDefault() {
-        return logBuDefault;
-    }
-
-    public NotificationDisplayType getNotificationDisplayType() {
-        return notificationDisplayType;
-    }
-
-    public void setNotificationDisplayType(NotificationDisplayType notificationDisplayType) {
-        this.notificationDisplayType = notificationDisplayType;
-    }
-
-    public MessageType getMessageType() {
-        return messageType;
-    }
-
-    public void setMessageType(MessageType messageType) {
-        this.messageType = messageType;
+    public void setNotificationType(NotificationType notificationType) {
+        this.notificationType = notificationType;
     }
 }

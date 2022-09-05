@@ -4,10 +4,14 @@ plugins {
 }
 
 group = "cn.tannn"
-version = "1.1"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
 }
 
 // Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
@@ -25,19 +29,15 @@ tasks {
         targetCompatibility = "11"
         options.encoding = "UTF-8"
     }
-
+    buildSearchableOptions {
+        enabled = false
+    }
     patchPluginXml {
-        sinceBuild.set("212")
+        version.set("${project.version}")
+        sinceBuild.set("213")
         untilBuild.set("222.*")
     }
 
-    signPlugin {
-        certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
-        privateKey.set(System.getenv("PRIVATE_KEY"))
-        password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
-    }
 
-    publishPlugin {
-        token.set(System.getenv("PUBLISH_TOKEN"))
-    }
+
 }

@@ -4,9 +4,11 @@ import cn.tannn.portadmin.entity.DataCenter;
 import cn.tannn.portadmin.noitf.NotifyEntity;
 import cn.tannn.portadmin.noitf.PluginNotify;
 import cn.tannn.portadmin.util.CmdUtil;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.ui.EditorTextField;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,13 +25,16 @@ public class KillPortDialog extends DialogWrapper {
      * 标题
      */
     EditorTextField tfPID;
+    private Project project;
 
 
-    public KillPortDialog() {
-        super(true);
+    public KillPortDialog(@Nullable Project project) {
+        super(project,true);
+        this.project = project;
         setTitle("kill 吗 ?");
         init();
     }
+
 
     /**
      * 主体面板
@@ -49,6 +54,7 @@ public class KillPortDialog extends DialogWrapper {
         return jPanel;
     }
 
+
     /**
      * 添加的按钮
      * （createSouthPanel 下边的）
@@ -64,7 +70,7 @@ public class KillPortDialog extends DialogWrapper {
             // 获取编辑编辑框的内容
             String pidText = tfPID.getText();
             String killMessage = CmdUtil.killPid(pidText);
-            PluginNotify.notification(
+            PluginNotify.notification(project,
                      NotifyEntity.success("winkillport_id",
                              "kill "+pidText +"====>"+killMessage));
             // 关闭消息框

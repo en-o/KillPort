@@ -1,9 +1,10 @@
 package cn.tannn.portadmin.util;
 
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.MessageDialogBuilder;
-import com.intellij.openapi.ui.messages.MessageDialog;
+import org.codehaus.groovy.control.messages.WarningMessage;
+import org.jetbrains.annotations.NotNull;
 
-import java.security.MessageDigest;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,25 +22,29 @@ public class PortUtil {
      * 验证端口是否正确
      * @return  true 不合规
      */
-    public static Boolean verifyPort(String portStr){
+    public static Boolean verifyPort(String portStr, @NotNull Project project){
         Boolean ok = false;
         if("".equals(portStr)|| Objects.isNull(portStr)){
-            MessageDialogBuilder.yesNo("操作结果", "要输入值才能使用哦").show();
+            MessageDialogBuilder.yesNo("操作结果", "要输入值才能使用哦").ask(project);
             ok = true;
         }
         if(!isNumber(portStr)){
-            MessageDialogBuilder.yesNo("操作结果", "端口是数字哦").show();
+            MessageDialogBuilder.yesNo("操作结果", "端口是数字哦").ask(project);
             ok = true;
         }else {
-            Integer port = Integer.valueOf(portStr);
-            // 0-65535
-            Integer maxPort = 65535;
-            Integer minPort = 0;
-            // 大于 return 1
-            if(port.compareTo(maxPort) > 0 || port.compareTo(minPort) < 0){
-                MessageDialogBuilder.yesNo("操作结果", "端口范围是0-65535哦").show();
-                ok = true;
-            }
+            try {
+               Integer port = Integer.valueOf(portStr);
+                // 0-65535
+                Integer maxPort = 65535;
+                Integer minPort = 0;
+                // 大于 return 1
+                if(port.compareTo(maxPort) > 0 || port.compareTo(minPort) < 0){
+                    MessageDialogBuilder.yesNo("操作结果", "端口范围是0-65535哦").ask(project);
+                    ok = true;
+                }
+           }catch (Exception e){
+               MessageDialogBuilder.yesNo("操作结果", "你在干什么，都溢出了！").ask(project);
+           }
         }
         return ok;
 

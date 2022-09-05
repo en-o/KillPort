@@ -44,7 +44,6 @@ public class PortKillWin {
             public void keyPressed(KeyEvent keyEvent) {
                 //按回车键执行相应操作;
                 if(keyEvent.getKeyCode()==KeyEvent.VK_ENTER){
-
                     btnSearch.doClick();
                 }
             }
@@ -58,14 +57,14 @@ public class PortKillWin {
             DataCenter.reset();
             // 获取输入的端口
             String portText = tfPort.getText().trim();
-            if(Boolean.TRUE.equals(PortUtil.verifyPort(portText))){
+            if(Boolean.TRUE.equals(PortUtil.verifyPort(portText, project))){
                 return;
             }
             // 处理两边空格
             portText = portText.trim();
             List<PortEntity> portEntity = CmdUtil.getPortEntity(portText);
             if(portEntity.isEmpty()){
-                MessageDialogBuilder.yesNo("操作结果", portText+"端口无进程占用").show();
+                MessageDialogBuilder.yesNo("操作结果", portText+"端口无进程占用").ask(project);
             }
             DataCenter.NOTE_LIST.addAll(portEntity);
             // 给自定的win传内容
@@ -80,13 +79,13 @@ public class PortKillWin {
             @Override
             public void mouseClicked(MouseEvent evt) {
                 // InputEvent.META_MASK (左)
-                if (evt.getModifiers()== InputEvent.META_MASK){
+                if (evt.getModifiersEx()== InputEvent.META_DOWN_MASK){
                     int selectedRow = tbContent.getSelectedRow();
                     // 没选择不操作
                     if(selectedRow >= 0 ){
                         DataCenter.KILL_PID  = tbContent.getValueAt(selectedRow, 0).toString();
                         DataCenter.KILL_IMAGE = tbContent.getValueAt(selectedRow, 1).toString();
-                        KillPortDialog addNoteDialog = new KillPortDialog();
+                        KillPortDialog addNoteDialog = new KillPortDialog(project);
                         addNoteDialog.show();
                     }
                 }
