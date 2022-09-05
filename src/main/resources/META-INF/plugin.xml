@@ -59,5 +59,8 @@
                     factoryClass="cn.tannn.portadmin.win.PortAdminWinFactory"
                     anchor="bottom">
         </toolWindow>
+        <notificationGroup id="winkillport_id"
+                           displayType="BALLOON"
+                           key="notification.group.name"/>
     </extensions>
 </idea-plugin>
