@@ -27,8 +27,10 @@ public class PortUtil {
         if("".equals(portStr)|| Objects.isNull(portStr)){
             MessageDialogBuilder.yesNo("操作结果", "要输入值才能使用哦").ask(project);
             ok = true;
-        }
-        if(!isNumber(portStr)){
+        }else if(portStr.length()>5){
+            MessageDialogBuilder.yesNo("操作结果", "端口不能超过五位数哦").ask(project);
+            ok = true;
+        } else if(!isNumber(portStr)){
             MessageDialogBuilder.yesNo("操作结果", "端口是数字哦").ask(project);
             ok = true;
         }else {
@@ -57,7 +59,7 @@ public class PortUtil {
      * @return
      */
     public static boolean isNumber(String str) {
-        Pattern pattern = compile("-?[0-9]+.?[0-9]+");
+        Pattern pattern = compile("[0-9]*");
         Matcher isNum = pattern.matcher(str);
         if (!isNum.matches()) {
             return false;
