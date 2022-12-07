@@ -1,7 +1,6 @@
 plugins {
     id("java")
-    id("org.jetbrains.intellij") version "1.5.2"
-    id("org.jetbrains.kotlin.jvm") version "1.6.10"
+    id("org.jetbrains.intellij") version "1.9.0"
 }
 
 group = "cn.tannn"
@@ -11,17 +10,13 @@ repositories {
     mavenCentral()
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-}
-
-// Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
+// Configure Gradle IntelliJ Plugin
+// Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
-    version.set("2022.3")
+    version.set("2022.1.4")
     type.set("IC") // Target IDE Platform
-    /* Plugin Dependencies */
-    plugins.set(listOf("com.intellij.java"))
-//    plugins.set(listOf())
+    updateSinceUntilBuild.set(false)
+    plugins.set(listOf(/* Plugin Dependencies */))
 }
 
 tasks {
@@ -31,15 +26,19 @@ tasks {
         targetCompatibility = "11"
         options.encoding = "UTF-8"
     }
-    buildSearchableOptions {
-        enabled = false
-    }
+
     patchPluginXml {
-        version.set("${project.version}")
-        sinceBuild.set("213")
-//        untilBuild.set("222.*") 最后版本
+        sinceBuild.set("221")
+//        untilBuild.set("231.*") +updateSinceUntilBuild.set(false) 不限制最高版本
     }
 
+    signPlugin {
+        certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
+        privateKey.set(System.getenv("PRIVATE_KEY"))
+        password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
+    }
 
-
+    publishPlugin {
+        token.set(System.getenv("PUBLISH_TOKEN"))
+    }
 }
