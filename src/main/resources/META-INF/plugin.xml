@@ -3,7 +3,7 @@
     <id>cn.tannn.killport.id</id>
     <name>KillPort</name>
     <vendor email="1445763190@qq.com" url="http://www.tannn.cn">tan</vendor>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <depends>com.intellij.modules.platform</depends>
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.

@@ -1,10 +1,11 @@
 plugins {
     id("java")
     id("org.jetbrains.intellij") version "1.5.2"
+    id("org.jetbrains.kotlin.jvm") version "1.6.10"
 }
 
 group = "cn.tannn"
-version = "1.0.1"
+version = "1.0.2"
 
 repositories {
     mavenCentral()
@@ -16,10 +17,11 @@ java {
 
 // Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
 intellij {
-    version.set("2022.1.2")
+    version.set("2022.3")
     type.set("IC") // Target IDE Platform
-
-    plugins.set(listOf(/* Plugin Dependencies */))
+    /* Plugin Dependencies */
+    plugins.set(listOf("com.intellij.java"))
+//    plugins.set(listOf())
 }
 
 tasks {
@@ -35,7 +37,7 @@ tasks {
     patchPluginXml {
         version.set("${project.version}")
         sinceBuild.set("213")
-        untilBuild.set("222.*")
+//        untilBuild.set("222.*") 最后版本
     }
 
 
