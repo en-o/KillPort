@@ -29,7 +29,6 @@ public class CommandUtil {
             processBuilder.redirectErrorStream(true);
             processBuilder.command(commands);
             Process start = processBuilder.start();
-//            Set<String> result = commandResult(start.getInputStream(), StandardCharsets.UTF_8);
             Set<String> result = commandResult(start.getInputStream(), Charset.forName("GBK"));
             start.waitFor();
             start.destroy();
