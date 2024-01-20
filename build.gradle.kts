@@ -7,6 +7,7 @@ plugins {
 group = "cn.tannn"
 version = "1.0.3"
 
+
 repositories {
     mavenCentral()
 }
@@ -14,29 +15,25 @@ repositories {
 // Configure Gradle IntelliJ Plugin
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
-    version.set("2023.3.2")
+    version.set("2023.1.5")
     type.set("IC") // Target IDE Platform
-    updateSinceUntilBuild.set(false)
+
     plugins.set(listOf(/* Plugin Dependencies */))
 }
-
 
 tasks {
     // Set the JVM compatibility versions
     withType<JavaCompile> {
         sourceCompatibility = "17"
         targetCompatibility = "17"
-        options.encoding = "UTF-8"
     }
-
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions.jvmTarget = "17"
     }
 
-
     patchPluginXml {
-        sinceBuild.set("221")
-//        untilBuild.set("231.*") +updateSinceUntilBuild.set(false) 不限制最高版本
+        sinceBuild.set("231") // 最低版本
+//        untilBuild.set("241.*") // 不限制最高版本
     }
 
     signPlugin {
