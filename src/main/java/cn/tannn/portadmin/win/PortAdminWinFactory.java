@@ -20,10 +20,14 @@ public class PortAdminWinFactory implements ToolWindowFactory {
         // 创建窗口对象
         PortKillWin portAdminWin = new PortKillWin(project, toolWindow);
         // 获取内容工厂的实例
-        ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
+        ContentFactory contentFactory = toolWindow.getContentManager().getFactory();
         // 获取用于toolwindow显示的内容
         Content content = contentFactory.createContent(portAdminWin.getContentPanel(), "", false);
         // 给 toolwindow设置内容
         toolWindow.getContentManager().addContent(content);
+
+
     }
+
+
 }

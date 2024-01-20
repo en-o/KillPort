@@ -1,5 +1,9 @@
 package cn.tannn.portadmin.util;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -14,7 +18,7 @@ import java.util.Set;
  * @date 2021-11-23 14:52
  */
 public class CommandUtil {
-
+    private static final Logger LOG = LoggerFactory.getLogger(CommandUtil.class);
 
 
     /**
@@ -29,20 +33,18 @@ public class CommandUtil {
             processBuilder.redirectErrorStream(true);
             processBuilder.command(commands);
             Process start = processBuilder.start();
-//            Set<String> result = commandResult(start.getInputStream(), StandardCharsets.UTF_8);
             Set<String> result = commandResult(start.getInputStream(), Charset.forName("GBK"));
             start.waitFor();
             start.destroy();
             return result;
         } catch (InterruptedException | IOException e) {
-            if(e instanceof InterruptedException){
+            if (e instanceof InterruptedException) {
                 Thread.currentThread().interrupt();
             }
-            e.printStackTrace();
-            return null;
+            LOG.error("cmd 运行失败", e);
         }
+        return null;
     }
-
 
 
     /**
@@ -62,15 +64,13 @@ public class CommandUtil {
             start.destroy();
             return result;
         } catch (InterruptedException | IOException e) {
-            if(e instanceof InterruptedException){
+            if (e instanceof InterruptedException) {
                 Thread.currentThread().interrupt();
             }
-            e.printStackTrace();
-            return null;
+            LOG.error("cmd 运行失败", e);
         }
+        return null;
     }
-
-
 
 
     /**
@@ -91,42 +91,33 @@ public class CommandUtil {
             start.destroy();
             return result;
         } catch (InterruptedException | IOException e) {
-            if(e instanceof InterruptedException){
+            if (e instanceof InterruptedException) {
                 Thread.currentThread().interrupt();
             }
-            e.printStackTrace();
-            return null;
+            LOG.error("cmd 运行失败", e);
         }
+        return null;
     }
-
-
-
-
-
-
-
 
 
     /**
      * 输出 Process 返回的内容
-     *    GBK
+     * GBK
+     *
      * @param inputStream inputStream
-     * @param charsets  StandardCharsets.UTF_8
+     * @param charsets    StandardCharsets.UTF_8
      * @return message
      */
     public static Set<String> commandResult(InputStream inputStream, Charset charsets) throws IOException {
-        BufferedReader reader= new BufferedReader(new InputStreamReader(inputStream, charsets));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, charsets));
 
         String line;
         Set<String> hashSet = new HashSet<>();
-        while((line = reader.readLine()) != null) {
+        while ((line = reader.readLine()) != null) {
             hashSet.add(line);
         }
         return hashSet;
     }
-
-
-
 
 
 }

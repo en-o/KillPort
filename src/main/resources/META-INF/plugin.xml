@@ -1,0 +1,69 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>cn.tannn.killport.id</id>
+    <name>KillPort</name>
+    <vendor email="1445763190@qq.com" url="http://www.tannn.cn">tan</vendor>
+    <version>1.0.2</version>
+    <depends>com.intellij.modules.platform</depends>
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+      <article>
+      <h1> English:</h1> <br/>
+      <p>This is a tool for terminating application processes by port. </p>
+      <p>When developing a Web application, a port is occupied, and when the port is not important or we don't know who is occupying it, we want to check it out and end it. </p>
+      <p>But the system often doesn't remember the commands and you always have to go through the documentation, so that's where this tool comes in. </p>
+      <p>The way to use the tool is simple: </p>
+      <ol>
+        <li>Open the plug-in</li>
+        <li>Input port</li>
+        <li>Click Search</li>
+        <li>Right-click the search results</li>
+        <li>End the selection process</li>
+	  </ol>
+
+      <h1> Chinese:</h1>
+      <p>这是一款根据端口结束应用进程的工具。 </p>
+      <p>在开发web应用时,会出现端口被占用的情况，当这个端口不重要或者不知道是谁在占用时，我们就想查看他并结束他。 </p>
+      <p>但是系统的命令经常记不住总是得去翻文档，于是就有了这个工具。 </p>
+      <p>工具的使用方式很简单: </p>
+        <ol>
+          <li>打开插件</li>
+          <li>输入端口</li>
+          <li>点击搜索</li>
+          <li>右击搜索的结果</li>
+          <li>结束选择的进程</li>
+        </ol>
+     <article>
+     <h1>tool screenshot</h1>
+     <img src="https://oss.tannn.cn/idea/kill_2.png" alt="used"/>
+     <img src="https://oss.tannn.cn/idea/kill_3.png" alt="kill"/>
+     <img src="https://oss.tannn.cn/idea/kill_leng_err.png" alt="tool kill_leng_err"/>
+     <img src="https://oss.tannn.cn/idea/kill_num_err.png" alt="tool kill_num_err"/>
+     <img src="https://oss.tannn.cn/idea/kill_alert.png" alt="tool kill_alert"/>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      The first version only supports Windows.（目前支支持window） <br/>
+      macos in the works.（苹果系统规划中）  <br/>
+    ]]>
+    </change-notes>
+
+
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!--https://plugins.jetbrains.com/docs/intellij/tool-windows.html#declarative-setup-->
+        <toolWindow id="killPort"
+                    secondary="true"
+                    icon="cn.tannn.portadmin.icons.PluginIcons.LOG_DEF"
+                    factoryClass="cn.tannn.portadmin.win.PortAdminWinFactory"
+                    anchor="bottom">
+        </toolWindow>
+        <notificationGroup id="winkillport_id"
+                           displayType="BALLOON"
+                           key="notification.group.name"/>
+    </extensions>
+</idea-plugin>
