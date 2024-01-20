@@ -2,7 +2,6 @@ package cn.tannn.portadmin.util;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.MessageDialogBuilder;
-import org.codehaus.groovy.control.messages.WarningMessage;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;

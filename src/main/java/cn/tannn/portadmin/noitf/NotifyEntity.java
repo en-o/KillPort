@@ -1,8 +1,6 @@
 package cn.tannn.portadmin.noitf;
 
-import com.intellij.notification.NotificationDisplayType;
 import com.intellij.notification.NotificationType;
-import com.intellij.openapi.ui.MessageType;
 
 /**
  * 消息通知
