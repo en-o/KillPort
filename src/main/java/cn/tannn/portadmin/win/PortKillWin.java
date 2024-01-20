@@ -78,16 +78,13 @@ public class PortKillWin {
         tbContent.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent evt) {
-                // InputEvent.META_MASK (左)
-                if (evt.getModifiersEx()== InputEvent.META_DOWN_MASK){
-                    int selectedRow = tbContent.getSelectedRow();
-                    // 没选择不操作
-                    if(selectedRow >= 0 ){
-                        DataCenter.KILL_PID  = tbContent.getValueAt(selectedRow, 0).toString();
-                        DataCenter.KILL_IMAGE = tbContent.getValueAt(selectedRow, 1).toString();
-                        KillPortDialog addNoteDialog = new KillPortDialog(project);
-                        addNoteDialog.show();
-                    }
+                int selectedRow = tbContent.getSelectedRow();
+                // 没选择不操作
+                if(selectedRow >= 0 ){
+                    DataCenter.KILL_PID  = tbContent.getValueAt(selectedRow, 0).toString();
+                    DataCenter.KILL_IMAGE = tbContent.getValueAt(selectedRow, 1).toString();
+                    KillPortDialog addNoteDialog = new KillPortDialog(project);
+                    addNoteDialog.show();
                 }
             }
         });

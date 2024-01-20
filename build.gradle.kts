@@ -34,7 +34,7 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("231") // 最低版本
-        untilBuild.set("241.*") // 最高版本
+        untilBuild.set("241.*") // 最高版本5
     }
 
     signPlugin {
