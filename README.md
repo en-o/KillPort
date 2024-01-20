@@ -1,3 +1,9 @@
+# 官方文档
+> 使用 IntelliJ IDEA 2023.3 或更高版本时，必须从 JetBrains Marketplace（插件主页）安装 Plugin DevKit 插件，因为它不再与 IDE 捆绑在一起。
+https://plugins.jetbrains.com/docs/intellij/developing-plugins.html#gradle-intellij-plugin
+
+
+
 # 运行
 右侧工具栏gradle -> 运行配置 -> run plugin
 
